@@ -94,6 +94,8 @@ const characters = [
 
 let randomPasswordOneEl = document.querySelector("#randomPasswordOne-el");
 let randomPasswordTwoEl = document.querySelector("#randomPasswordTwo-el");
+let randomPasswordOneMREl = document.querySelector("#randomPasswordOneMR-el");
+let randomPasswordTwoMREl = document.querySelector("#randomPasswordTwoMR-el");
 let btnGeneratePassword = document.querySelector("#generatePassword");
 
 let lenghtPwd = document.querySelector("#lenghtPwd");
@@ -126,22 +128,24 @@ function randomPassword() {
       filterChar[Math.floor(Math.random() * filterChar.length)];
   }
 
-  console.log(filterChar);
+  //console.log(filterChar);
   return generatePassword;
 }
 
 generatePassword.addEventListener("click", function () {
-  // console.log('click')
+  //   console.log(lenghtPwd.value);
 
-  randomPasswordOneEl.value = randomPassword();
-  randomPasswordTwoEl.value = randomPassword();
+  if (lenghtPwd.value >= 5) {
+    randomPasswordOneEl.value = randomPassword();
+    randomPasswordTwoEl.value = randomPassword();
+  } else {
+    alert("Minimum password length should be 5");
+  }
 });
 
+function copyToClipboard(e) {
+  let value = e.value;
 
-
-function copyToClipboard(e){
-    let value = e.value;
-    
-    navigator.clipboard.writeText(value)
-    alert('copied to clipboard')
+  navigator.clipboard.writeText(value);
+  alert("copied to clipboard");
 }

@@ -4,19 +4,31 @@
   </head>
   <body>
     <h1>Password Generator</h1>
-    <div><input id="lenghtPwd" type="number" min="5" max="15" value="5" /></div>
+    <div>
+      <input id="lenghtPwd" type="number" min="5" max="15" value="5" required />
+    </div>
     <div>
       <label><input type="checkbox" id="isNumber" checked /> Number</label>
     </div>
     <div>
       <label><input type="checkbox" id="isSymbol" checked /> Symbol</label>
     </div>
-    <button id="generatePassword">generate password</button>
-    <br/>
+    <button type="submit" id="generatePassword">generate password</button>
+    <br />
     <p>click to copy password</p>
-    <input type="text" id="randomPasswordOne-el" onclick="copyToClipboard(this)" readonly/>
-    <br/>
-    <input type="text" id="randomPasswordTwo-el" onclick="copyToClipboard(this)" readonly/>
+    <input
+      type="text"
+      id="randomPasswordOne-el"
+      onclick="copyToClipboard(this)"
+      readonly
+    />
+    <br />
+    <input
+      type="text"
+      id="randomPasswordTwo-el"
+      onclick="copyToClipboard(this)"
+      readonly
+    />
     <script src="index.js"></script>
   </body>
 </html>
